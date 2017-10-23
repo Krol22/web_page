@@ -10,7 +10,8 @@ router.addPath('articles', {
 });
 
 router.addPath('aboutMe', {
-    text: 'aboutMe',
+    async: true,
+    url: 'about_me.html', 
 });
 
 router.addPath('contact', {
