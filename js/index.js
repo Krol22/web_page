@@ -1,6 +1,6 @@
 const router = new Router();
 
-router.addPath('home', {
+router.addPath('/', {
     text: 'home',
 });
 
@@ -15,5 +15,6 @@ router.addPath('aboutMe', {
 });
 
 router.addPath('contact', {
-    text: 'contact',
+    component: ContactComponent
 });
+
