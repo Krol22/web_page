@@ -119,3 +119,8 @@ section.work p {
 footer {
     margin-top: 40px;
 }
+
+/* CONTACT FORM */
+.error {
+    display: none;
+}
