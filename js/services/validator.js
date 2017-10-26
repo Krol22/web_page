@@ -49,12 +49,17 @@ hideAllErrors = function(fieldName) {
 
 validateField = function(field){ 
     hideAllErrors(field.name);
-    Object.keys(errValidityMap).find(key => {
+    field.classList.remove('error-input');
+    let founded = Object.keys(errValidityMap).find(key => {
         let error = document.getElementsByClassName(`${field.name}${errValidityMap[key]}`)[0];
         if(field.validity[key] && error) {
-            error.style.display = 'initial';
+            error.style.display = 'inline-block';
             return true;
         }
         return false;
     });
+
+    if(founded) {
+        field.classList.add('error-input');
+    }
 }

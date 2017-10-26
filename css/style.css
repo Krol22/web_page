@@ -1,3 +1,7 @@
+* {
+    font-family: 'Source Code Pro', monospace;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -7,10 +11,14 @@ a:visited {
     color: black;
 }
 
+button {
+    padding: 6px;
+}
+
 body {
+    font-family: 'Source Code Pro', monospace;
     margin: auto;
     padding: 50px 50px;
-    font-family: 'Source Code Pro', monospace;
     max-width: 760px;
     background-color: #aaa;
     color: #222;
@@ -70,10 +78,11 @@ section.profiles figure {
     background-color: #ddd;
     color: black;
     box-shadow: 0px 0px 20px 10px #999;
+    transition: box-shadow ease-in-out .2s;
 }
 
 section.profiles figure:hover {
-    box-shadow: 0px 0px 40px 5px #7E57C2;
+    box-shadow: 0px 0px 40px 5px rgba(126, 87, 194, 1);
 }
 
 .nickname {
@@ -91,25 +100,25 @@ section.profiles figure img {
 }
 
 section.work figure {
-    width: 25%;
-    background-color: #ddd;
-    box-shadow: 0px 0px 20px 10px #999;
     width: 200px;
     height: 150px;
     padding: 20px;
+    background-color: #ddd;
+    box-shadow: 0px 0px 20px 10px #999;
+    transition: box-shadow ease-in-out .2s;
 }
 
 figure.green:hover {
-    box-shadow: 0px 0px 20px 5px #81C784;
+    box-shadow: 0px 0px 20px 5px rgba(129, 199, 132, 1);
 }
 figure.red:hover {
-    box-shadow: 0px 0px 20px 5px #E57373;
+    box-shadow: 0px 0px 20px 5px rgba(229, 115, 115, 1);
 }
 figure.cyan:hover {
-    box-shadow: 0px 0px 20px 5px #4DD0E1;
+    box-shadow: 0px 0px 20px 5px rgba(77, 208, 225, 1);
 }
 figure.yellow:hover {
-    box-shadow: 0px 0px 20px 5px #FFB74D;
+    box-shadow: 0px 0px 20px 5px rgba(255, 183, 77, 1);
 }
 
 section.work p {
@@ -121,6 +130,65 @@ footer {
 }
 
 /* CONTACT FORM */
-.error {
-    display: none;
+
+contact-form form {
+    display: block;
+    text-align: center;
+} 
+
+contact-form p {
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+contact-form form{
+    margin-top: 40px;
+}
+
+contact-form .form-input {
+    transition: box-shadow ease-in-out .2s;
+    display: inline-block;
+    border: 1px solid #aaa;
+    padding: 5px;
+    width: 80%;
+    margin: 10px 0px;
+    box-shadow: 0px 0px 40px 5px rgba(0, 0, 0, 0);
+}
+
+contact-form .form-input:focus {
+    outline: none;
+}
+
+contact-form .form-input[name="form_name"]:focus {
+    box-shadow: 0px 0px 40px 5px rgba(129, 199, 132, 1);
+}
+
+contact-form .form-input[name="form_email"]:focus {
+    box-shadow: 0px 0px 40px 5px rgba(126, 87, 194, 1);
+}
+
+contact-form .form-input[name="form_message"]:focus {
+    box-shadow: 0px 0px 40px 5px rgba(77, 208, 225, 1);
+}
+
+contact-form .form-message {
+    resize: none;
+    height: 200px;
+}
+
+contact-form .error {
+    display: inline-block;
+    width: 100%;
+    color: #B71C1C;
+}
+
+contact-form .error-input {
+    background-color: #EED7D7;
+}
+
+contact-form .form-footer {
+    display: inline-block;
+    width: 80%;
+    padding: 5px;
+    text-align: right;
 }
