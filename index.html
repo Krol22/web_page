@@ -9,6 +9,9 @@
         <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="import" href="./src/components/blog/blog.template.html">
+        <link rel="import" href="./src/components/contact/contact.template.html">
+        <link rel="import" href="./src/components/navigation/navigation.template.html">
     </head>
     <body>
         <header>
@@ -17,7 +20,7 @@
             <p> And is my personal page. </p>
         </header>
         <nav>
-            <navigation></navigation>
+            <nav-component></nav-component>
         </nav>
 
         <main>
@@ -25,13 +28,9 @@
         </main>
 
         <footer> Bleh bleh footer bla bla </footer>
-        <script src="js/services/dom.utils.js"></script>
-        <script src="js/services/validator.js"></script>
-        <script src="js/services/system.js"></script>
-        <script src="js/services/component.js"></script>
-        <script src="js/services/router.js"></script>
-        <script src="js/components/navigation.js"></script>
-        <script src="js/components/contact.js"></script>
-        <script src="js/index.js"></script>
+        <script src="src/services/dom.utils.js"></script>
+        <script src="src/services/validator.js"></script>
+        <script src="src/services/router.js"></script>
+        <script src="src/index.js"></script>
     </body>
 </html>
