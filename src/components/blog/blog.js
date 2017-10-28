@@ -1,4 +1,4 @@
-class Articles extends HTMLElement {
+class Blog extends HTMLElement {
 
     constructor() {
         super();
@@ -15,6 +15,6 @@ class Articles extends HTMLElement {
     
 }
 
-Articles.prototype.currentDocument = document.currentScript.ownerDocument;
+Blog.prototype.currentDocument = document.currentScript.ownerDocument;
 
-customElements.define('blog-component', Articles);
+customElements.define('blog-component', Blog);

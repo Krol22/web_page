@@ -1,5 +1,29 @@
 <template id="nav-component">
-    <link rel="stylesheet" href="src/components/navigation/navigation.css"/>
+    <style>
+        nav {
+            text-align: center;
+            background-color: #222;
+        }
+
+        ul{
+            list-style-type: none; 
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px 20px;
+            margin: 0px;
+            color: #aaa;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #444;
+        }
+    </style>
+
     <nav>
         <ul>
             <a href="#" [link]="/" class="active"><li>Blog</li></a>

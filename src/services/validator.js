@@ -20,7 +20,11 @@ const Validator = {
     },
     validateForm: function(form) {
         let isValid = true;
-        let formElements = Array.from(form.elements).filter(element => element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA' || element.nodeName === 'SELECT');
+        let formElements = Array.from(form.elements).filter(
+            element => element.nodeName === 'INPUT' || 
+            element.nodeName === 'TEXTAREA' || 
+            element.nodeName === 'SELECT'
+        );
 
         formElements.forEach(field => {
                 if (!field.checkValidity()) {

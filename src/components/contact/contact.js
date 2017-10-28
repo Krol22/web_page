@@ -16,7 +16,7 @@ class Contact extends HTMLElement {
         this.contactForm = shadowRoot.querySelectorAll('form')[0];
 
         Validator.initFormErrors(this.contactForm);
-        this.button.addEventListener('click', this.onSubmitForm);
+        this.button.addEventListener('click', this.onSubmitForm.bind(this));
     }
 
     onSubmitForm(event) {
