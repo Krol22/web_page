@@ -1,15 +1,20 @@
-const router = new Router();
+Router.init();
 
-router.addPath('/', {
+Router.addPath('/', {
     text: '<blog-component></blog-component>',
 });
 
-router.addPath('aboutMe', {
-    async: true,
+Router.addPath('aboutMe', {
     url: 'about_me.html', 
 });
 
-router.addPath('contact', {
+Router.addPath('contact', { 
     text: '<contact-component></contact-component>'
 });
+
+Router.addPath('posts/{id}', {
+    text: '<post-component></post-component>'
+});
+
+Router.goTo('/');
 

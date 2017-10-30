@@ -5,11 +5,10 @@ class Post extends HTMLElement {
     }
 
     connectedCallback() {
-        
         const template = this.currentDocument.querySelector('#post-component');
         this.innerHTML = template.innerHTML;
 
-        this.postId = this.getAttribute('post-name');
+        this.postId = Router.currentLocation.params.id;
 
         PostService.getPost(this.postId).then(res => {
             this.querySelectorAll('.post__text')[0].innerHTML = res;

@@ -1,0 +1,25 @@
+{
+    "posts" : [
+        {
+            "title": "First blog post",
+            "file_name": "firstpost",
+            "date_added": "2012-04-23T18:20:43.511Z"
+        },
+        {
+            "title": "Second blog post",
+            "file_name": "secondpost",
+            "date_added": "2012-04-23T18:21:43.511Z"
+        },
+        {
+            "title": "Third blog post",
+            "file_name": "thirdpost",
+            "date_added": "2012-04-23T18:22:43.511Z"
+        },
+        {
+            "title": "Fourth blog post",
+            "file_name": "fourthpost",
+            "date_added": "2012-04-23T18:23:43.511Z"
+        }
+    ],
+    "length": 4
+}
