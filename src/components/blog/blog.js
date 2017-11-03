@@ -8,15 +8,12 @@ class Blog extends HTMLElement {
         const template = this.currentDocument.querySelector('#blog-component');
         this.innerHTML = template.innerHTML;
 
-        PostService.getPostsMeta().then(data => {
-            this.render(data);
-        });
+        this.render(Router.currentLocation.resolve.posts);
     }
 
-    render(data) {
+    render(posts) {
         let section = this.querySelectorAll('#posts')[0];
-        data.posts
-            .sort((a, b) => {
+        posts.sort((a, b) => {
                 let dateA = new Date(a.date_added); 
                 let dateB = new Date(b.date_added); 
 
@@ -25,18 +22,26 @@ class Blog extends HTMLElement {
             .forEach(post => {
             let template = `
                 <h3> ${post.title} </h3>
-                <p> ${post.file_name} </p>
-                <router-link [link]="posts/${post.file_name}"> Read more </router-link>
+                <p class="post-short-text"> ${post.short_text} </p>
+                <div class="on-hover-link"> 
+                    <p> Read more </p>
+                </div>
             `;    
             let newNode = this.currentDocument.createElement('article');
             newNode.innerHTML = template;
+            this._addClickEvent(newNode, post);
 
             section.appendChild(newNode);
         });
     }
-    
+
+    _addClickEvent(postNode, post) {
+        postNode.addEventListener('click', (event) => {
+            event.preventDefault();
+            Router.goTo(`posts/${post.file_name}`);
+        });
+    }
 }
 
 Blog.prototype.currentDocument = document.currentScript.ownerDocument;
-
 customElements.define('blog-component', Blog);

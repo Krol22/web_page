@@ -7,6 +7,7 @@ const Router = {
         this.routes = {};
         this.element = document.getElementsByTagName('router')[0];
     },
+
     addPath: function(path, content){
         if(this.routes[path]){
             throw new Error('Content in this path already exists!');
@@ -30,7 +31,16 @@ const Router = {
                 this.element.innerHTML = data; 
             });
         } else {
-            this.element.innerHTML = this.routes[route.path].text;
+            if(this.routes[route.path].resolve){
+                this.currentLocation.resolve = {};
+                this.routes[route.path]
+                    .resolve(this.currentLocation)
+                    .then(() => {
+                        this.element.innerHTML = this.routes[route.path].text;
+                    }); 
+            } else {
+                this.element.innerHTML = this.routes[route.path].text;
+            }
         }
         
     }

@@ -2,6 +2,11 @@ Router.init();
 
 Router.addPath('/', {
     text: '<blog-component></blog-component>',
+	resolve: (currentLocation) => {
+        return PostService.getPostsMeta().then(data => {
+            currentLocation.resolve.posts = data.posts;
+        });
+	}
 });
 
 Router.addPath('aboutMe', {
@@ -13,7 +18,12 @@ Router.addPath('contact', {
 });
 
 Router.addPath('posts/{id}', {
-    text: '<post-component></post-component>'
+    text: '<post-component></post-component>',
+    resolve: (currentLocation) => {
+        return PostService.getPost(currentLocation.params.id).then(res => {
+            currentLocation.resolve.post = res;
+        });
+    }
 });
 
 Router.goTo('/');

@@ -11,7 +11,8 @@ const PostService = {
         return fetch(`static/posts/${postId}.md`).then(res => { 
             return res.text();
         }).then(data => {
-            return '<h3> Post </h3>';
+			const converter = new showdown.Converter();
+            return converter.makeHtml(data);
         });
     }
 
