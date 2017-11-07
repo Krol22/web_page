@@ -23,6 +23,9 @@ class Blog extends HTMLElement {
             let template = `
                 <h3> ${post.title} </h3>
                 <p class="post-short-text"> ${post.short_text} </p>
+                <div class="author">
+                    by <a rel="author"> ${post.author} </a>
+                </div>
                 <div class="on-hover-link"> 
                     <p> Read more </p>
                 </div>
