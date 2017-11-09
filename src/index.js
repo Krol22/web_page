@@ -1,6 +1,6 @@
 Router.init();
 
-Router.addPath('/', {
+Router.addPath('/test', {
     text: '<blog-component></blog-component>',
 	resolve: (currentLocation) => {
         return PostService.getPostsMeta().then(data => {
@@ -9,7 +9,7 @@ Router.addPath('/', {
 	}
 });
 
-Router.addPath('aboutMe', {
+Router.addPath('/', {
     url: 'about_me.html', 
 });
 

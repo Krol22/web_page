@@ -1,34 +1,15 @@
 <template id="nav-component">
-    <style>
-        nav {
-            text-align: center;
-            background-color: #222;
-        }
-
-        ul{
-            list-style-type: none; 
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            padding: 10px 20px;
-            margin: 0px;
-            color: #aaa;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        li:hover {
-            background-color: #444;
-        }
-    </style>
-
-    <nav>
-        <ul>
-            <router-link href="#" [link]="/" class="active"><li>Blog</li></router-link>
-            <router-link href="#" [link]="aboutMe"><li>About me</li></router-link>
-            <router-link href="#" [link]="contact"><li>Contact</li></router-link>
+    <nav class="nav">
+        <ul class="nav-list">
+            <router-link href="#" [link]="/" class="active">
+                <li class="nav-list-item">Blog</li>
+            </router-link>
+            <router-link href="#" [link]="aboutMe">
+                <li class="nav-list-item">About me</li>
+            </router-link>
+            <router-link href="#" [link]="contact"> 
+                <li class="nav-list-item">Contact</li>
+            </router-link>
         </ul>
     </nav>
 </template>
