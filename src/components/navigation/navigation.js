@@ -8,7 +8,7 @@ class Navigation extends HTMLElement {
         const template = this.currentDocument.querySelector('#nav-component');
         this.innerHTML = template.innerHTML;
 
-        this.navElements = this.querySelectorAll('a');
+        this.navElements = this.querySelectorAll('router-link');
 
         Array.from(this.navElements).forEach(elem => {
             elem.addEventListener('click', (e) => {
