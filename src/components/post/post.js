@@ -8,7 +8,7 @@ class Post extends HTMLElement {
         const template = this.currentDocument.querySelector('#post-component');
         this.innerHTML = template.innerHTML;
 
-        this.querySelectorAll('.post__text')[0].innerHTML = Router.currentLocation.resolve.post;
+        this.querySelectorAll('.post-text')[0].innerHTML = Router.currentLocation.resolve.post;
     }
 
 }

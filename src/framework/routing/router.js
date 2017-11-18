@@ -6,6 +6,11 @@ const Router = {
     init: function() {
         this.routes = {};
         this.element = document.getElementsByTagName('router')[0];
+        this.history = [];
+
+        window.onpopstate = e => {
+            this.goTo(e.state.url);
+        };
     },
 
     addPath: function(path, content){
@@ -23,6 +28,8 @@ const Router = {
         }
 
         this.currentLocation = route; 
+
+        window.history.pushState({ url: path }, '', path);
 
         if(this.routes[route.path].url) {
             fetch(this.routes[route.path].url).then((response) => {
@@ -42,7 +49,6 @@ const Router = {
                 this.element.innerHTML = this.routes[route.path].text;
             }
         }
-        
     }
 }
 
@@ -71,7 +77,6 @@ function findRoute(path) {
                 break;
             }
         }
-
 
         return true;
     });

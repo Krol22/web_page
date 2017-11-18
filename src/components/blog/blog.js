@@ -41,7 +41,7 @@ class Blog extends HTMLElement {
     _addClickEvent(postNode, post) {
         postNode.addEventListener('click', (event) => {
             event.preventDefault();
-            Router.goTo(`posts/${post.file_name}`);
+            Router.goTo(`/posts/${post.file_name}`);
         });
     }
 }
