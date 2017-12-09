@@ -11,8 +11,10 @@
     --color-orange: #FF9900;
     --color-violet: #FF00DE;
     --color-blue: #228DFF;
+    --color-light-blue: rgb(96, 174, 252);
     --color-grey: #666;
     --color-green: #39FF14;
+    --color-yellow: rgb(252, 255, 49);
 }
 
 html, body {
@@ -34,6 +36,14 @@ h3 {
     font-size: 1.5em;
     font-weight: 600;
     text-shadow: 0 0 10px;
+}
+
+p {
+    line-height: 1.4em;
+}
+
+em {
+    font-style: italic;
 }
 
 body {
@@ -81,10 +91,6 @@ body {
     margin: 14px 0;
 }
 
-.header-text {
-    line-height: 1.4em;
-}
-
 .content-header {
     text-align: center;
     margin: 10px 0;
@@ -116,7 +122,6 @@ body {
 }
 
 .card {
-    transition: box-shadow ease-in-out .4s;
     border-radius: 10px;
     text-align: center;
     margin: 10px;
@@ -133,6 +138,14 @@ body {
     box-shadow: 0px 0px 40px 1px var(--color-green);
 }
 
+.card-green:hover {
+    border-color: var(--color-yellow);
+    color: var(--color-yellow);
+    background-color: rgb(24, 24, 6);
+
+    box-shadow: 0px 0px 40px 1px var(--color-yellow);
+}
+
 .card-img {
     width: 40%;
     margin: 5px;
@@ -141,6 +154,10 @@ body {
 .card-title {
     padding: 10px;
     font-size: 1.4em;
+}
+
+.send-mail-link:hover {
+    color: var(--color-light-blue) 
 }
 
 .footer {
