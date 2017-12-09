@@ -146,6 +146,10 @@ body {
     box-shadow: 0px 0px 40px 1px var(--color-yellow);
 }
 
+.card-green:hover .card-img {
+    filter: hue-rotate(310deg);
+}
+
 .card-img {
     width: 40%;
     margin: 5px;
